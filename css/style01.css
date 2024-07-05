@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;1,400;1,500;1,900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { height: 100%; }
+body { height: auto; }
+a { text-decoration: none; }
+
+body {
+	background-image: linear-gradient(45deg, #0a1536, #002a2a, #021014);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 7px 0px #000;
+}
+
+header {
+	width: 100%;
+}
+
+#logo {
+	color: #B7B7B7;
+	text-align: center;
+	font-size: 10.2em;
+	user-select: none;
+	text-shadow: 0 0 30px #000;
+	font-family: "Tiny5", serif;
+}
+
+.logo-tag {
+	color: orange;
+}
+
+nav, main, aside {
+	background-color: rgb(0 0 0 / 35%);
+	border-radius: 30px;
+	box-shadow: 0 0 5px 0 #000;
+}
+
+.navbar, main, footer {	
+	width: 85%;
+}
+
+.navbar {
+	height: 45px;
+	margin: 15px auto;
+	font-family: 'Barlow', Arial;
+	position: relative;
+	z-index: 1;
+}
+
+.navbar > ul {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.navbar ul li {
+	list-style: none;
+	height: 100%;
+}
+
+.navbar > ul > li > a {
+	color: #c6c6c6;
+	height: 100%;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	padding: 0 20px;
+	transition: all 0.5s;
+}
+
+.navbar > li > a {
+	border-radius: 0 35px 35px 0;
+}
+
+.navbar > ul > li > a:hover {
+    background: rgb(24 98 98 / 35%);
+}
+
+.navbar.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%; 
+  border-radius: 0;
+  backdrop-filter: blur(5px);
+  margin: 0;
+}
+
+.navbar-button-container {
+	position: relative;
+}
+
+navbar-button {
+	position: absolute;
+	z-index: 2;
+	display: none;
+	width: 20px;
+	height: 2px;
+	background-color: #fff;
+	cursor: pointer;
+	right: 20px;
+}
+
+navbar-button::after {
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 2px;
+	background-color: #fff;
+	top: 5px;
+}
+
+navbar-button::before {
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 2px;
+	background-color: #fff;
+	top: 10px;
+}
+
+.container {
+	display: flex;
+	width: 85%;
+	margin: 15px auto;
+	font-family: "Arial Narrow";
+	color: #c6c6c6;
+	text-shadow: 0 0 2px #000;
+	gap: 15px;
+	text-align: justify;
+}
+
+aside, main { padding: 25px; }
+
+.widgets {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+h2.widget-title {
+	text-transform: uppercase;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: solid 2px #fff;
+	font-size: 20px;
+}
+
+aside {
+	width: 250px;
+}
+
+main {
+	/*width: 85%;*/
+	height: auto;
+	margin: 0 auto;
+	border-radius: 30px;
+	box-shadow: 0 0 5px 0 #000;
+}
+
+main > h3 {
+	text-decoration: underline;
+}
+
+p {
+	font-size: 18px;
+}
+
+footer {
+    height: auto;
+    background: #050c12;
+    display: flex;
+    margin: 0 auto;
+    border-radius: 30px 30px 0 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.info-footer {
+	text-align: center;
+	flex-grow: 1;
+}
+
+.info-footer h3 {
+	margin-bottom: 10px;
+	color: #939393;
+}
+
+.info-footer ul {
+	display: flex;
+	flex-direction: column;
+}
+
+.info-footer ul li {
+	list-style: none;
+}
+
+.info-footer a {
+	color: #666;
+}
+
+.info-footer a:hover {
+	color: #888;
+}
+
+aside::-webkit-scrollbar {
+	width: 4px; /* Ancho de la barra */
+}
+  
+aside::-webkit-scrollbar-track {
+	background: transparent; /* Color del fondo del carril */
+}
+  
+aside::-webkit-scrollbar-thumb {
+	background: rgb(33, 4, 100); /* Color de la barra */
+	border-radius: 20px;
+}
+
+aside::-webkit-scrollbar-thumb:hover {
+	background: rgb(60, 12, 136); /* Color al pasar el mouse */
+}
+
+
+
+@media (max-width: 800px) {
+	#logo {
+		font-size: 5.2em;
+	}
+
+	navbar-button { display: block; }
+
+	main {
+		margin: 0;
+		width: 100%;
+	}
+
+	h2.widget-title {
+		position: sticky;
+		top: 0;
+		width: 100%;
+		padding: 10px;
+		backdrop-filter: blur(10px);
+		text-align: center;
+	}
+
+	aside p {
+		margin-top: 10px;
+	}
+
+	.widgets {
+		display: inline-flex;
+		flex-flow: column;
+	}
+
+	aside {
+		width: 100%;
+		height: 30vh;
+		overflow: auto;
+		position: relative;
+	}
+
+	.container {
+		flex-wrap: wrap;
+	}
+}
+
+
